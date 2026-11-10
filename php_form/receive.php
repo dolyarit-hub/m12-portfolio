@@ -7,6 +7,11 @@ $method = $_SERVER['REQUEST_METHOD'];
 // TODO 2: For POST, read the displayName value from $_POST.
 // Hint: use the null coalescing operator ?? to provide an empty-string default.
 $name = '';
+if ($method === 'GET') {
+  $name = $_GET['displayName'] ?? '';
+  } elseif ($method === 'POST') {
+  $name = $_POST['displayName'] ?? '';
+  }
 
 // TODO 3: Remove spaces at the beginning/end using trim().
 
